@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page - Minha Empresa</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navegação -->
+    <nav>
+      <ul>
+        <li><a href="#section1" class="active">Início</a></li>
+        <li><a href="#section2">Sobre</a></li>
+        <li><a href="#section3">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Seção Início -->
+    <div class="section" id="section1">
+      <div class="intro">
+        <img
+          src="https://rounder.pics/assets/img/ui/square.webp"
+          alt="Logo Empresa"
+          class="perfil"
+        />
+        <h1>Bem-vindo à Minha Empresa</h1>
+        <p>
+          Somos uma empresa focada em oferecer soluções criativas e eficientes
+          para nossos clientes.
+        </p>
+        <a href="#section2" class="btn">Saiba Mais</a>
+      </div>
+    </div>
+
+    <!-- Seção Sobre -->
+    <div class="section" id="section2">
+      <h2>Sobre Nós</h2>
+      <p>
+        A <strong>Minha Empresa</strong> nasceu com o propósito de entregar
+        inovação, qualidade e resultados para os nossos clientes.
+      </p>
+      <p><strong>Missão:</strong> Tornar ideias em realidade.</p>
+      <p><strong>Visão:</strong> Ser referência em soluções criativas.</p>
+      <p><strong>Valores:</strong> Qualidade, Ética e Comprometimento.</p>
+    </div>
+
+    <!-- Seção Contato -->
+    <div class="section" id="section3">
+      <h2>Entre em Contato</h2>
+      <p>Preencha os campos abaixo para nos enviar uma mensagem no WhatsApp:</p>
+
+      <form id="formContato">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <input type="email" id="email" placeholder="Seu e-mail" required />
+        <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+        <button type="button" onclick="enviarMensagem()">
+          Enviar via WhatsApp
+        </button>
+      </form>
+
+      <div class="social-links">
+        <p>Siga-nos:</p>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://youtube.com" target="_blank">YouTube</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+      </div>
+    </div>
+
+    <!-- Script WhatsApp -->
+    <script>
+      function enviarMensagem() {
+        const nome = document.getElementById("nome").value;
+        const email = document.getElementById("email").value;
+        const mensagem = document.getElementById("mensagem").value;
+
+        const texto = `Olá, meu nome é ${nome} (${email}) e gostaria de falar: ${mensagem}`;
+        const numero = "55SEUNUMEROAQUI"; // Ex: 5511999999999
+        const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+        window.open(url, "_blank");
+      }
+    </script>
+  </body>
+</html>
